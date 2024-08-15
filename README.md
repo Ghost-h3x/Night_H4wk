@@ -8,6 +8,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 - [] Obfuscator
 - [] Startup Persistence
 - [] Fud
+- Encrypted Communication
 - [x] Shell
 - [x] Screenshot
 - [x] Information Gathering
