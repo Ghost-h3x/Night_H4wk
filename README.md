@@ -4,10 +4,11 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 
 ## Features
 
-- [v] AntiVM Detection
+- [] AntiVM Detection
 - [] Obfuscator
 - [] Startup Persistence
 - [] Fud
+- <p align="center"><s>This is centered and struck-through text.</s></p>
 - Encrypted Communication
 - [x] Shell
 - [x] Screenshot
