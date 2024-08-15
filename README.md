@@ -4,11 +4,11 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 
 ## Features
 
-- [] AntiVM Detection
-- [] Obfuscator
-- [] Startup Persistence
-- [] Fud
-- <p align="center"><s>This is centered and struck-through text.</s></p>
+- <p><s>AntiVM</s></p>
+- <p><s>Obfuscator</s></p>
+- <p><s>Startup Persistence</s></p>
+- <p><s>FUD</s></p>
+- 
 - Encrypted Communication
 - [x] Shell
 - [x] Screenshot
