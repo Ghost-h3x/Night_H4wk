@@ -9,6 +9,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 - <p><s>Startup Persistence</s></p>
 - <p><s>FUD</s></p>
 - <p><s>Encrypted Communication</s></p>
+- <p><s>Password Stealer</s></p>
 - [x] Shell
 - [x] Screenshot
 - [x] Information Gathering
