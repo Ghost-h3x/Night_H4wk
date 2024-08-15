@@ -14,6 +14,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 - [x] Information Gathering
 - [x] File Download
 - [x] File Upload
+- [x] Multi-Session
 
 ## Screenshots
 
