@@ -4,7 +4,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 
 ## Features
 
-- [] AntiVM Detection
+- [v] AntiVM Detection
 - [] Obfuscator
 - [] Startup Persistence
 - [] Fud
