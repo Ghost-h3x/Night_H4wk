@@ -8,8 +8,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 - <p><s>Obfuscator</s></p>
 - <p><s>Startup Persistence</s></p>
 - <p><s>FUD</s></p>
-- 
-- Encrypted Communication
+- <p><s>Encrypted Communication</s></p>
 - [x] Shell
 - [x] Screenshot
 - [x] Information Gathering
