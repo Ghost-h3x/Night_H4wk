@@ -4,7 +4,7 @@ This is a Python-based RAT (Remote Access Trojan) project that is currently unde
 
 ## Features
 
-- <p><s>AntiVM</s></p>
+- [x]AntiVM
 - <p><s>Obfuscator</s></p>
 - <p><s>Startup Persistence</s></p>
 - <p><s>FUD</s></p>
